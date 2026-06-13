@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Extracted Products Index List</h2>
+    <p>Below is the summary index monitoring sheet across available item datasets on your machine.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID / Link</th>
+                <th>Total Opinions</th>
+                <th>With Pros Listed</th>
+                <th>With Cons Listed</th>
+                <th>Average Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in products %}
+            <tr>
+                <td><a href="{{ url_for('product_view', product_id=p.product_id) }}" style="color: #2980b9; font-weight: bold; text-decoration: none;">Product #{{ p.product_id }}</a></td>
+                <td>{{ p.total_opinions }} </td>
+                <td>{{ p.opinions_with_advantages }} </td>
+                <td>{{ p.opinions_with_disadvantages }} </td>
+                <td><strong>{{ p.average_score }} / 5</strong></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="5" style="text-align: center;">No product logs extracted locally yet. Go use the extraction utility window page.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
