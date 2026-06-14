@@ -2,7 +2,6 @@
 {% block content %}
     <h2>Extract Opinions from Ceneo</h2>
     <p>Provide a valid numeric Ceneo Product Code (e.g., <code>16978985</code>) below.</p>
-    
     <form method="POST" action="{{ url_for('extract') }}">
         <div style="margin-bottom: 15px;">
             <label for="product_id" style="display:block; font-weight:bold; margin-bottom:5px;">Ceneo Product ID:</label>
@@ -11,3 +10,4 @@
         <button type="submit" class="btn">Start Extraction Process</button>
     </form>
 {% endblock %}
+# 6

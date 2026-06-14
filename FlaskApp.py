@@ -13,7 +13,7 @@ app.secret_key = "uek_project_secret_key"
 OUTPUT_DIR = "extracted_products"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-
+# 1
 class Opinion:
     def __init__(self, data_dict):
         self.opinion_id = data_dict.get("opinion_id", "")
